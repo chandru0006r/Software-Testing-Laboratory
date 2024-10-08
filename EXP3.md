@@ -1,6 +1,6 @@
 # Ex.No: 3 To check the number is prime or not and inspect for failures.
  
-### DATE: 10/09/2024                                                                           
+### DATE:                                                                            
 ### REGISTER NUMBER : 212222040029
 ### AIM: 
 Write a python program to check the number is prime or not and inspect for failures.
@@ -16,64 +16,38 @@ Write a python program to check the number is prime or not and inspect for failu
 8. Stop the program.
 
 ### Program:
-
 ```
-num = input()
+num = input("Enter a number: ")
 flag = 0
 
 if num.isnumeric():
     z = int(num)
-    if z == 2:
-        flag = 1
-    if z > 2:
-        for i in range(2, z // 2):
-            if z % i == 0:
-                flag = 0
-                break
-        else:
-            flag = 1
-    if flag == 1:
-        print("Prime Number")
+    if z < 1:
+        print("Enter a Positive Number")
     else:
-        print("Not a Prime Number")
+        if z == 2:
+            flag = 1
+        elif z > 2:
+            for i in range(2, int(z ** 0.5) + 1):  # Check up to the square root of z
+                if z % i == 0:
+                    flag = 0
+                    break
+            else:
+                flag = 1
+        
+        if flag == 1:
+            print("Prime Number")
+        else:
+            print("Not a Prime Number")
 else:
     print("Enter a Positive Number")
-
 ```
-
-
-
-
-
-
-
-
-
-
 
 ### Output:
 
 
-```
-Enter a Positive number: 2
-Prime number
+![Screenshot (84)](https://github.com/user-attachments/assets/cd1ca00d-4c70-4ca1-80a9-387dea750025)
 
-Enter a Positive number: 5
-Prime number
-
-Enter a Positive number: krishna
-Enter a positive number 
-Reason: Strings are not allowed
-
-Enter a Positive number: -1
-Enter a positive number
-Reason: Negative number are not allowed.
-
-Enter a Positive number: 1
-Not a Prime number 
-Reason: The entered number is not a prime number.
-
-```
 
 
 ### Result:
